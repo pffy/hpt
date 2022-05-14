@@ -1,0 +1,95 @@
+<!-- /* functions.html */ -->
+
+<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+
+<style>
+
+#wrap {
+  margin: 16px;
+}
+
+#ytwrap {
+  padding-top: 16px;
+}
+
+button {
+  margin-top: 16px;
+}
+
+.result { } /* leave empty */
+
+.customfunctionlist {
+  padding-left: 16px;
+}
+
+.customfunctionlist .fname {
+  font-weight: bold;
+  color: green;
+}
+
+.customfunctionlist li {
+  margin-top: 32px;
+}
+
+.updated {
+  background-color: yellow;
+  color: black;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+</style>
+
+<div id="wrap">
+
+<h1>Function list</h1>
+
+<p>Use <b>HanyuPinyinTools</b> custom functions to convert Chinese text to
+Hanyu Pinyin.</p>
+
+<p>If the text in cell <b>A1</b> is 中国, then you may use any of the following custom functions:</p>
+
+<ul class="customfunctionlist">
+  <li>
+  <span class="fname">=HANYUPINYIN(A1)</span>
+  <br/><span class="gray">Converts text or range of text to Hanyu Pinyin with tone numbers.</span>
+  <br/><span class="result">RESULT: zhong1 guo2</span>
+  </li>
+  <li>
+  <span class="fname">=HANYUPINYIN_TONELESS(A1)</span>
+  <br/><span class="gray">Converts text or range of text to Hanyu Pinyin with no tones.</span>
+  <br/><span class="result">RESULT: zhong guo</span>
+  </li>
+  <li>
+  <span class="fname">=HANYUPINYIN_TONEMARKS(A1)</span>
+  <br/><span class="gray">Converts text or range of text to Hanyu Pinyin with backwards-compatible tone marks.</span>
+  <br/><span class="result">RESULT: zhōng guó</span>
+  <br/>
+  <br/><span class="result">TONE 3 EXAMPLE: 好得很</span>  
+  <br/><span class="result">RESULT: hăo de hĕn</span>    
+  </li>
+  <li>
+  <span class="fname">=HANYUPINYIN_TONEMARKS_ISO(A1)</span>
+  <br/><span class="gray">Converts text or range of text to Hanyu Pinyin with ISO 7098 compliant tone marks.</span>
+  <br/><span class="result">RESULT: zhōng guó</span>
+  <br/>
+  <br/><span class="result">TONE 3 ISO EXAMPLE: 好得很</span>  
+  <br/><span class="result">ISO RESULT: hǎo de hěn</span>  
+  </li>
+  
+</ul>
+
+<button onclick="google.script.host.close()">Ok, got it</button>
+
+</div>
+
+<!--
+/**
+ * name     : functions.html
+ * version  : 24
+ * updated  : 2018-12-17
+ * git      : https://github.com/pffy/hpt
+ * licesne  : https://opensource.org/licenses/MIT
+ */
+-->
