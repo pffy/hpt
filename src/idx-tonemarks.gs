@@ -2,8 +2,8 @@
 
 /**
  * name     : idx-tonemarks.gs
- * version  : 24
- * updated  : 2018-12-17
+ * version  : 81
+ * updated  : 2022-05-15
  * git      : https://github.com/pffy/hpt
  * licesne  : https://opensource.org/licenses/MIT
  */
