@@ -7,7 +7,7 @@
  * git      : https://github.com/pffy/hpt
  * licesne  : https://opensource.org/licenses/MIT
  */
-var IdxHanyuPinyin = {
+var hpdx = {
     "\u3ea2\u3e62\u72d3": "huo4 jia1 pi1",
     "\u4e07\u5b81\u5e02": "wan4 ning2 shi4",
     "\u4e09\u9879\u5f0f": "san1 xiang4 shi4",

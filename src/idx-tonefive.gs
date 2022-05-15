@@ -7,7 +7,7 @@
  * git      : https://github.com/pffy/hpt
  * licesne  : https://opensource.org/licenses/MIT
  */
-var IdxToneFive = {
+var tfdx = {
     "chuang5": "chuang",
     "shuang5": "shuang",
     "zhuang5": "zhuang",

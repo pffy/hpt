@@ -7,7 +7,7 @@
  * git      : https://github.com/pffy/hpt
  * licesne  : https://opensource.org/licenses/MIT
  */
-var IdxToneMarksIso = {
+var tmidx = {
     "iang1": "i\u0101ng",
     "iang2": "i\u00e1ng",
     "iang3": "i\u01ceng",

@@ -7,7 +7,7 @@
  * git      : https://github.com/pffy/hpt
  * licesne  : https://opensource.org/licenses/MIT
  */
-var IdxToneMarks = {
+var tmdx = {
     "uu1an": "\u00fcan",
     "uu2an": "\u01d8an",
     "uu3an": "\u01daan",
