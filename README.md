@@ -8,7 +8,7 @@
   + Method 2: 
     + Visit [latest release][latest]. 
     + Download zip file. 
-    + Add `addon.gs` and `data.gs` to Apps Script project in Google Sheets.
+    + Copy and paste contents of both `addon.gs` and `data.gs` into your Apps Script project in Google Sheets.
 
 ---
 [latest]: https://github.com/pffy/hpt/releases
