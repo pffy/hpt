@@ -1,0 +1,101 @@
+# build.yaml
+# uses pffy/nip to cat idx files into data.gs
+# creates a new HanyuPinyinTools release in repo
+# author: The Pffy Authors
+# license: MIT
+
+name: build-data-gs-then-zip
+
+on:
+  milestone:
+    types: [closed]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:                        
+        - name: Checkout code
+          uses: actions/checkout@v3
+        - name: Set release tag name
+          run: |
+            ls
+            cd src
+            VER=v$(cat addon.gs | grep -i "version" | tr -dc '0-9')
+            echo $VER
+            echo '::set-output name=TAGNAME::'$VER 
+            echo '::set-output name=OUTFILE::'hanyupinyintools-$VER.zip
+          id: heretag
+        - name: Get release tag name
+          run: |
+            echo "${{ steps.heretag.outputs.TAGNAME }}"            
+            echo "${{ steps.heretag.outputs.OUTFILE }}"  
+          id: theretag
+        - name: Build project zip asset
+          id: buildzip
+          run: |          
+            ls
+            pwd
+            git clone https://github.com/pffy/nip
+            
+            ## get the file location for horizontal rule
+            HR=$PWD/nip/js/hr80.js
+            echo $HR
+            
+            ## from the repo root, list idx files with commas
+            FF=$(ls -1 src/idx* | tr "\n" ",")
+            echo $FF
+
+            ## based on solution found here:
+            ## https://stackoverflow.com/a/27658733
+            ## removes last comma
+            FF=${FF::-1}
+            echo $FF
+            
+            ## based on this solutions:
+            ## https://stackoverflow.com/a/13210909
+            ## replace the commas with file name of HR80
+            FF=${FF//,/ $HR }
+            echo $FF
+
+            ## build a new data.gs file
+            rm -f data.gs
+            echo "/* data.gs */" >> data.gs
+            echo "" >> data.gs
+            cat $FF >> data.gs            
+
+            pwd
+            cp src/addon.gs ./
+                        
+            zip ${{ steps.heretag.outputs.OUTFILE }} data.gs addon.gs
+            ls
+        - name: Create Release
+          id: create_release          
+          uses: actions/create-release@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            tag_name: ${{ steps.heretag.outputs.TAGNAME }}
+            release_name: ${{ steps.heretag.outputs.TAGNAME }}
+            body: |
+              * [HanyuPinyinTools][hpt]
+              * Custom functions for Google Sheets
+              * idx files combined into data.gs for easy install
+              * License: MIT
+              ---
+              [hpt]: https://github.com/pffy/hpt
+            draft: true
+            prerelease: false
+        - name: Upload Release Asset
+          id: upload-release-asset 
+          uses: actions/upload-release-asset@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            upload_url: ${{ steps.create_release.outputs.upload_url }} 
+            asset_path: ./${{ steps.heretag.outputs.OUTFILE }}
+            asset_name: ${{ steps.heretag.outputs.OUTFILE }}
+            asset_content_type: application/zip
