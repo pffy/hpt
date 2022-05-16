@@ -79,11 +79,11 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
             tag_name: ${{ steps.heretag.outputs.TAGNAME }}
-            release_name: ${{ steps.heretag.outputs.TAGNAME }}
+            release_name: HanyuPinyinTools ${{ steps.heretag.outputs.TAGNAME }}
             body: |
               * [HanyuPinyinTools][hpt]
               * Custom functions for Google Sheets
-              * idx files combined into data.gs for easy install
+              * All idx files combined into `data.gs` for convenience
               * License: MIT
               ---
               [hpt]: https://github.com/pffy/hpt
