@@ -7,7 +7,7 @@
 > **NOTE:** Each method only affects one spreadsheet. 
 
   + Method 1:
-    + [Copy this spreadsheet][copy]. (recommended)
+    + [Make of copy][copy] pf HanyuPinyinTools. (recommended)
       - You can preview the source code.
       - You get your own personal copy of HanyuPinyinTools.
   + Method 2: 
