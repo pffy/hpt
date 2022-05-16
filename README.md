@@ -7,9 +7,10 @@
 > **NOTE:** Each method only affects one spreadsheet. 
 
   + Method 1:
-    + [Make of copy][copy] pf HanyuPinyinTools. (recommended)
-      - You can preview the source code.
+    + [Make of copy][copy] of HanyuPinyinTools. (recommended)
+      - You can preview the Apps Script file.
       - You get your own personal copy of HanyuPinyinTools.
+      - Distributed, decentralized copies prevent your spreadsheets from breaking.
   + Method 2: 
     + Visit [latest release][latest]. 
     + Download zip file. 
