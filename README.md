@@ -10,7 +10,7 @@
     + [Make of copy][copy] of HanyuPinyinTools. (recommended)
       - You can preview the Apps Script file.
       - You get your own personal copy of HanyuPinyinTools.
-      - Distributed, decentralized copies prevent your spreadsheets from breaking.
+      - Distributed, decentralized copies prevent updates from breaking your spreadsheet.
   + Method 2: 
     + Visit [latest release][latest]. 
     + Download zip file. 
