@@ -1,5 +1,7 @@
 # HanyuPinyinTools
 
+Hanyu Pinyin conversion for Google Sheets
+
 [![build-data-gs-then-zip](https://github.com/pffy/hpt/actions/workflows/build.yml/badge.svg)](https://github.com/pffy/hpt/actions/workflows/build.yml)
 
 ## INSTALL
