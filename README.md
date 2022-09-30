@@ -1,2 +1,2 @@
 # hpt
-redirect to HanyuPinyinTools repo
+go here: https://github.com/pffy/hanyupinyintools
